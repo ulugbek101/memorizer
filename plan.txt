@@ -1,4 +1,0 @@
-Profile update feature
-Add "New note" link to navbar
-Build frontend to create a new note
-Build frontend to display all notes

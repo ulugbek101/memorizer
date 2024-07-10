@@ -1,0 +1,7 @@
+1) >>> git init
+2) .gitigore faylini hosil qilish va ichiga "venv/" matnini yozish kerak
+3) >>> git add .
+4) >>> git commit -m "First commit"
+5) >>> git branch -M main
+6) >>> git remote add origin <URL>
+7) >>> git push -u origin main
