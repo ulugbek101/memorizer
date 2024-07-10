@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block changing_part %}
+    <div class="container d-flex flex-row justify-content-between mt-5">
+        <div class="w-50">
+            <h1 class="mb-3">New note</h1>
+            <form action="/create-note/" method="post">
+                {% csrf_token %}
+                <div class="d-flex flex-column">
+                    <label class="form-label" for="">Title</label>
+                    <input name="title" class="form-control" type="text">
+                </div>
+                <div class="d-flex flex-column">
+                    <label class="form-label" for="">Description</label>
+                    <textarea name="description" class="form-control" rows="10"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3 d-block w-100">
+                    Create note
+                </button>
+            </form>
+        </div>
+
+        <img src="https://abrakadabra.fun/uploads/posts/2021-12/1640335338_1-abrakadabra-fun-p-zametki-png-1.png" width="500px">
+    </div>
+{% endblock changing_part %}

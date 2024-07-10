@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+    
+{% block changing_part %}
+    <div class="container d-flex justify-content-evenly align-items-center">
+        <img width="600px" src="https://themesdesign.in/jobcy/layout/assets/images/auth/sign-in.png">
+        <form class="mt-5 w-25" method="post" action="">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Username:</label>
+                <input type="text" class="form-control" name="username" autofocus>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password:</label>
+                <input type="password" class="form-control" name="password">
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+
+            <small class="d-block mt-3 text-center">
+                Don't have an account ? 
+                <a href="/register/">Sign up</a>
+                now
+            </small>
+        </form>
+    </div>
+{% endblock changing_part %}
+  

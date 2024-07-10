@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+    
+{% block changing_part %}
+<div class="container mt-5">
+
+    {% for note in notes %}
+        <a href="/my-notes/{{ note.id }}/" class="text-decoration-none">
+            <div class="w-100 border border-secondary p-2 rounded mb-2 d-flex align-items-center justify-content-between">
+                <h3>
+                    {{ note.title }}
+                </h3>
+            </div>
+        </a>
+    {% endfor %}
+
+</div>
+{% endblock changing_part %}

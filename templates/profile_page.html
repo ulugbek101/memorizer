@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block changing_part %}
+    <div class="container d-flex">
+        <div class="d-flex flex-column gap-5 w-50">
+            <div class="w-25 mt-5">
+                <img class="w-100 rounded-circle border border-dark" src="https://cdn0.iconfinder.com/data/icons/cosmo-user/40/user-1024.png">
+                <h4 class="text-secondary text-center mt-2">@{{ user.username}}</h4>
+            </div>
+            <div>
+                <h3>
+                    First name: 
+                    {% if user.first_name %}
+                        {{ user.first_name }}
+                    {% else %}
+                        -
+                    {% endif %}
+                </h3>
+                <h3>
+                    Last name:
+                    {% if user.last_name %}
+                        {{ user.last_name }}
+                    {% else %}
+                        -
+                    {% endif %}
+                </h3>
+                <h3>
+                    Email:
+                    {% if user.email %}
+                        {{ user.email }}
+                    {% else %}
+                        -
+                    {% endif %}
+                </h3>
+            
+            </div>
+        </div>
+        <div class="w-50">
+            
+            <h2 class="text-center text-secondary my-5">Update profile information</h2>
+
+            <form action="/profile-update/" method="post" class="w-100">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label for="username" class="form-label">*Username:</label>
+                    <input type="text" class="form-control" id="username" name="username" required value="{{ user.username }}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="first_name" class="form-label">First name:</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name" required value="{{ user.first_name }}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="last_name" class="form-label">Last name:</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name" required value="{{ user.last_name }}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="text" class="form-control" id="email" name="email" required value="{{ user.email }}">
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Update profile information</button>
+
+            </form>
+        </div>
+    </div>
+{% endblock changing_part %}

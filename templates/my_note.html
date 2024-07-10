@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block changing_part %}
+<div class="container mt-5">
+    <a href="{{ request.META.HTTP_REFERER }}" class="btn btn-dark d-flex align-items-center gap-2" style="width: 100px;">
+        <span class="material-icons">reply</span>
+        Back
+    </a>
+
+    <h1 class="mt-5">{{ note.title }}</h1>
+    <p>{{ note.description }}</p>
+
+    <div class="mt-5 d-flex gap-2">
+        <a href="" class="btn btn-warning d-flex align-items-center gap-2" style="width: 120px;">
+            <span class="material-icons">edit</span>
+            Update
+        </a>
+        <a href="/delete-note/{{ note.id }}/" class="btn btn-danger d-flex align-items-center gap-2" style="width: 120px;">
+            <span class="material-icons">delete</span>    
+            Delete
+        </a>
+    </div>
+</div>
+{% endblock changing_part %}

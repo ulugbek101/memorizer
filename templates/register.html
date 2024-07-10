@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block changing_part %}
+    <div class="container d-flex justify-content-evenly align-items-center">
+        <img width="600px" src="https://www.crgsolutions.co/wp-content/uploads/2020/05/registration.png">
+        <form class="mt-5 w-25" method="post" action="">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="username" class="form-label">*Username:</label>
+                <input type="text" class="form-control" id="username" name="username" required autofocus>
+            </div>
+
+            <div class="mb-3">
+                <label for="first_name" class="form-label">First name:</label>
+                <input type="text" class="form-control" id="first_name" name="first_name">
+            </div>
+
+            <div class="mb-3">
+                <label for="last_name" class="form-label">Last name:</label>
+                <input type="text" class="form-control" id="last_name" name="last_name">
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+
+            <div class="mb-3">
+                <label for="password1" class="form-label">*Password:</label>
+                <input type="password" class="form-control" id="password1" name="password1" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="password2" class="form-label">*Password confirmation:</label>
+                <input type="password" class="form-control" id="password2" name="password2" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Sign up</button>
+
+            <small class="d-block mt-3 text-center">
+                Already have an account ? 
+                <a href="/login/">Log in</a>
+                now
+            </small>
+        </form>
+    </div>
+{% endblock changing_part %}
