@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = [
-    'https://memorizer.up.railway.app',
+    'https://beshishi-olin.up.railway.app',
 ]
 
 
